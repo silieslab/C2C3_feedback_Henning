@@ -1,5 +1,5 @@
 
-function [F5,F6,F7]=PlotBoxPlots_VS(Conditions,Average)
+function [F6,F7]=PlotBoxPlots_VS(Conditions,Average)
 
 
 Con= fields(Conditions);
@@ -48,7 +48,9 @@ for i=1:Ncon
     
    
     if Average
-               
+
+       T='Avergage-Vector Length - T4 & T5 - Average of cells/perFly ';
+      
 %       Z_all_i_T5=abs(cat(2,Z_condi_OFF.T5A.M,Z_condi_OFF.T5B.M,Z_condi_OFF.T5C.M,Z_condi_OFF.T5D.M));
         Z_all_i_T5=Z_condi_OFF.T5.VL_M;
         Z_T5(i,1:length(Z_all_i_T5))=Z_all_i_T5;
@@ -59,6 +61,8 @@ for i=1:Ncon
         
        
     else
+       T='Vector Length - T4 & T5 - All cells ';
+
                
         Z_all_i_T5=abs(cat(2,Z_condi_OFF.T5A.ALL,Z_condi_OFF.T5B.ALL,Z_condi_OFF.T5C.ALL,Z_condi_OFF.T5D.ALL));
         Z_T5(i,1:length(Z_all_i_T5))=Z_all_i_T5;
@@ -110,7 +114,7 @@ for nl=1:length(Con2)
     Label=[Label,strcat(Con2(nl),' (', num2str(Num(nl)), ')')];
 end
 boxplot([LayerA_T4,LayerA_T5],'notch', 'on', 'labels',Label)
-sb1.Title.String= [T, '- LayerA'];
+sb1.Title.String= [T,'- LayerA'];
 
 
 sb2=subplot(4,1,2);

@@ -10,9 +10,9 @@ close all;
 
 
 % % % % % 
-addpath(genpath('/Volumes/SILIESLAB/MiriH/Github_Reps/C2C3_feedback_Henning'))
+addpath(genpath('/subscripts'))
 
-datapath='/Volumes/SILIESLAB/MiriH/Github_Reps/C2C3_feedback_Henning/Data';
+datapath='/Data/FFFData';
 
 addpath(datapath);
 cd(datapath);

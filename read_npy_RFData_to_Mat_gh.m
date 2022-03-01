@@ -27,7 +27,7 @@ Conditions={'Control','C3Kir', 'C2Kir'};%, 'C3Kir', 'C2Kir','T4C'};
 
 %% 
 
-RF_DATA=load('Data/RF_DATA_new_191029.mat');
+RF_DATA=load('Data/STRFs/RF_DATA_new_191029.mat');
 RF_DATA=RF_DATA.RF_DATA_new; 
     
 

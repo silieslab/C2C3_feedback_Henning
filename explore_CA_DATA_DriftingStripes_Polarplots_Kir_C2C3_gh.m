@@ -1,9 +1,7 @@
 % explore_CA_DATA_DriftingStripes_Polarplots
 
 %%%%%%%%%%
-% newest change: option to reduce sample Size for Control ROi based! 
-% Because just reducing to the same amount of flies, I still have many more ROIs for the control condition
-% For statistical comp I need to reduce them!(mh, 19.07.03)
+% Play one after another!!
 %%%%%%%%%%
 
 
@@ -112,7 +110,7 @@ end
 
 
 Average=true;
-[F5,F6,F7]=PlotBoxPlots_VS(Conditions_Cmp,Average);
+[F6,F7]=PlotBoxPlots_VS(Conditions_Cmp,Average);
 
 
 
