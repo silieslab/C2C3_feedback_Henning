@@ -15,24 +15,21 @@
 clear all
 close all
 
+addpath(genpath('subscripts'))
 % ___________
 
-Save_STRFs=1;
-Predicition_thres=0;
+
 Rel_thres=0.1;
 
 
-
 Conditions={'C2','C3'};%, 'C3Kir', 'C2Kir','T4C'};
-
 filesource='Data/STRFs/RF_DATA_C2C3';
 
 
 %____________
-addpath(genpath('subscripts'))
+
 
 load('Data/colormap_RF.mat')
-
 
 %% Load DATA
 

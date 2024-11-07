@@ -189,7 +189,7 @@ for i=1:4
 
 end 
 
-%% Fig. 4b
+%% Fig. 6b
 
 F6 =figure(6);
 Num=[NT4,NT5];

@@ -10,19 +10,22 @@ Python Code was written by Deniz Yüzak
 P. Berens, CircStat: A Matlab Toolbox for Circular Statistics, Journal of Statistical Software, Volume 31, Issue 10, 2009 
 
 ### ConnectivityC2C3:
-Plots the counts of pre- and post-synaptic contacts for C2 and C3 extracted from neuPRINT explorer medulla7coulmn dataset (Clements et al., 2020) (**Fig.2**) 
-
-### Plot_ONOFF_FlashAnalysis_5sec_T4T5_CA_BG_sub_SIMA_gh:
-Analyzes T4T5 responses to a full field ON/OFF stimulus for control and C2, C3 and C2C3 double silencing conditions  (**Fig.3a,b,c** and **Suppl.Fig. 2** )
+Plots the counts of pre- and post-synaptic contacts for C2 and C3 extracted were extracted from the FAFB EM dataset (Dorkenwald et al., 2024)(**Fig.2**) 
 
 ### Plot_ONOFF_FlashAnalysis_5sec_C2_C3_gh:
-Plots C2 and C3 responses to a full field ON/OFF stimulus (**Fig.5a** and **Suppl.Fig.5**)
+Plots C2 and C3 responses to a full field ON/OFF stimulus (**Fig.3a** and **Suppl.Fig.2**)
 
-### read_npy_RFData_to_Mat_gh:
-Analyzes T4T5 STRFs that were extracted using Python (**Fig.3d-j** and **Suppl.Fig. 3** )
+### Plot_ONOFF_FlashAnalysis_5sec_Mi1_gh:
+Plots Mi1 responses to a full field ON/OFF stimulus (**Fig.4a**)
+
+### Plot_ONOFF_FlashAnalysis_5sec_T4T5_CA_BG_sub_SIMA_gh:
+Analyzes T4T5 responses to a full field ON/OFF stimulus for control and C2, C3 and C2C3 double silencing conditions  (**Fig.5a,b,c** and **Suppl.Fig. 3** )
 
 ### read_npy_RFData_to_Mat_C2C3:
-Analyzes T4T5 STRFs that were extracted using Python (**Fig.5c-e**)
+Analyzes C2 and C3 STRFs that were extracted using Python (**Fig.3c-e**)
+
+### read_npy_RFData_to_Mat_Mi1:
+Analyzes Mi1 STRFs that were extracted using Python (**Fig.4b**)
 
 ### explore_CA_DATA_DriftingStripes_Polarplots_Kir_C2C3_gh:
 Analyzes T4T5 direction selectivity from responses to drifting stripes moving into 8 different directions (**Fig.4** and **Suppl.Fig. 4** )

@@ -78,7 +78,7 @@ if size(Data,1)==length(Con)
       
         
         disp('Lillifors Test for normal distribution:') 
-        Normal 
+        
 
 end 
 end 

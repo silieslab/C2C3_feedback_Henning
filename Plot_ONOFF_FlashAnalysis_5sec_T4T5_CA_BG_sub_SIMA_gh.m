@@ -10,18 +10,18 @@ close all;
 
 
 % % % % % 
-addpath(genpath('/subscripts'))
+addpath(genpath('subscripts'))
 
-datapath='/Data/FFFData';
+datapath='Data/FFFData';
 
 addpath(datapath);
-cd(datapath);
 
 
-FFFDATA_T4T5_Control=load('FFFDATA_T4T5_Control.mat');
-FFFDATA_T4T5_C2Sil=load('FFFDATA_T4T5_C2Sil.mat');
-FFFDATA_T4T5_C3Sil=load('FFFDATA_T4T5_C3Sil.mat');
-FFFDATA_T4T5_C2C3Sil=load('FFFDATA_T4T5_C2C3Sil.mat');
+
+FFFDATA_T4T5_Control=load([datapath,'/FFFDATA_T4T5_Control.mat']);
+FFFDATA_T4T5_C2Sil=load([datapath,'/FFFDATA_T4T5_C2Sil.mat']);
+FFFDATA_T4T5_C3Sil=load([datapath,'/FFFDATA_T4T5_C3Sil.mat']);
+FFFDATA_T4T5_C2C3Sil=load([datapath,'/FFFDATA_T4T5_C2C3Sil.mat']);
 
 
 % Average responses across epoch repetitions
@@ -698,7 +698,7 @@ MAX=max(x_T5_C2C3Sil(:,InterON2),[],2);
 T5_ONResps(4,1:length(MAX))=MAX-StartLevel;
 
 
-% Fig. 3b 
+% Fig. 5b 
 F3=figure; hold on
 set(F3,'Position', [ 400 400 500 500])
 
@@ -711,7 +711,7 @@ box1 = a(7);  box2= a(8); box3= a(9);% The 7th object is the first box
 Median1=a(4); Median2=a(5);Median3=a(6);
 set(box1, 'Color', '[0 0.5 0]');  set(box2, 'Color', '[0.75 0 0.75]');  set(box3, 'Color', '[0.7 0.7 0.7]'); 
 set(Median1, 'Color', 'k');  set(Median2, 'Color', 'k');  set(Median3, 'Color', 'k');    % 
-title('Fig.3b: ON response - T4','FontSize', 18) 
+title('Fig.5b: ON response - T4','FontSize', 18) 
 ylabel('Steps dF/F','FontSize', 18);
 set(gca,'FontSize',12)
 
@@ -730,7 +730,7 @@ set(gca,'FontSize',12)
 patch([0,15,15,0],[-0.1 -0.1 2.3 2.3],[0.7 0.7 0.7],'FaceAlpha',0.5)
 
 
-%Fig. 3c
+%Fig. 5c
 F20=figure; hold on
 set(F20,'Position', [ 400 400 250 320])
 
@@ -743,13 +743,13 @@ Median1=a(3); Median2=a(4);
 set(box1, 'Color', '[0 0.5 0]');  set(box2, 'Color', '[0.75 0 0.75]');  
 set(Median1, 'Color', 'k');  set(Median2, 'Color', 'k'); 
 ylim([0.2 2])
-title('Fig.3c Top: T4','FontSize', 18) 
+title('Fig.5c Top: T4','FontSize', 18) 
 ylabel('Time to peak (s)','FontSize', 18);
 set(gca,'FontSize',12)
 
 
 
-%Supp. Fig. 2d
+%Supp. Fig. 3d
 
 F9=figure; hold on
 set(F9,'Position', [ 400 400 500 500])
@@ -763,7 +763,7 @@ box1 = a(5);  box2= a(6);
 Median1=a(3); Median2=a(4);
 set(box1, 'Color', '[0.1 0.5 1]'); set(box2, 'Color', '[0.7 0.7 0.7]'); 
 set(Median1, 'Color', 'k');  set(Median2, 'Color', 'k');
-title('Supp Fig.2d: ON response - T4','FontSize', 18) 
+title('Supp Fig.3d: ON response - T4','FontSize', 18) 
 ylabel('Steps dF/F','FontSize', 18);
 set(gca,'FontSize',12)
 
@@ -782,7 +782,7 @@ set(gca,'FontSize',12)
 patch([0,15,15,0],[-0.1 -0.1 2.3 2.3],[0.7 0.7 0.7],'FaceAlpha',0.5)
 
 
-%Supp. Fig. 2e
+%Supp. Fig. 3e
 F25=figure; hold on
 set(F25,'Position', [ 400 400 300 500])
 
@@ -817,12 +817,13 @@ Multcomp_Stats(T5_ONResps,{'Control' , 'C2Kir', 'C3Kir'} )%, 'C2C3Kir'})
 % For ON delay I just want to test C2 vs C3 
 
 Multcomp_Stats(T4_ON_Delay(2:3,:),{'C2Kir', 'C3Kir'})
+Multcomp_Stats(T4_ON_Delay,{'C2Kir', 'C3Kir'})
 
 
 
 %% Fit Decay rates:
 
-% Fig.3c
+% Fig.5c
 InterON3=find((5<cur_t) .* (cur_t<8));  % Two seconds before ON response
 Decay_rates_C2Sil=nan(1,size(x_T4_C2Sil,1));
 for NCells=1:size(x_T4_C2Sil,1)
@@ -837,7 +838,7 @@ f = fit(Xx,CurrDec,'exp1');
 
 if f.b<0 % only take into account if it is a negative decay constant
 % Decay_rates_C2Sil(NCells)=1/abs(f.b);
-Decay_rates_C2Sil(NCells)=f.b;
+Decay_rates_C2Sil(NCells)=-1/f.b;
 
 
 end 
@@ -860,7 +861,7 @@ Xx=(1:length(CurrDec))'/iRATE;
 % title(num2str(d.rsquare));
 if f.b<0 % only take into account if it is a negative decay constant
 % Decay_rates_C3Sil(NCells)=1/abs(f.b);
-Decay_rates_C3Sil(NCells)=f.b;
+Decay_rates_C3Sil(NCells)=-1/f.b;
 
 end 
 
@@ -881,7 +882,7 @@ box1 = a(5);  box2= a(6);
 Median1=a(3); Median2=a(4);
 set(box1, 'Color', '[0 0.5 0]');  set(box2, 'Color', '[0.75 0 0.75]');  
 set(Median1, 'Color', 'k');  set(Median2, 'Color', 'k');
-title('Fig. 3c bottom')
+title('Fig. 5c bottom')
 ylabel(' Decay rate (tau)')
 
 figure

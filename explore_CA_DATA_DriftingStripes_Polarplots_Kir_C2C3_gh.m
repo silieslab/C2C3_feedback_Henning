@@ -91,7 +91,7 @@ set(F1,'PaperSize', [8 8])
 end 
 
 
-%% Compass Plots (Fig. 4a)
+%% Compass Plots (Fig. 6a)
 
 for N=1:Ncon 
     CONi=CON{N}; 
@@ -106,7 +106,7 @@ end
 
 
 %% Length of the Vector (DSI)
-%Fig. 4b und Suppl. Fig.4 
+%Fig. 6b und Suppl. Fig.4 
 
 
 Average=true;
@@ -115,7 +115,7 @@ Average=true;
 
 
 %% Plot ND vs PD 
-%Fig. 4c
+%Fig. 6c
 
 Plot_allresp_relative(Conditions_Cmp)
 
