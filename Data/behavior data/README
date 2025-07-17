@@ -1,1 +1,3 @@
-
+These are processed data from the fly-on-the-ball behavioral experiments, required to obtain figure 7 and supp. figure 5 in this manuscript.
+Code required to plot these figures in included in this repository. However, raw data required to plot the raw traces in these figures (e.g., Figure 7b) are not included, as they are too big for this repository.
+Please contact the lead author to request the raw data.
