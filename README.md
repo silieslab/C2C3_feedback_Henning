@@ -1,7 +1,7 @@
 # C2C3_feedback_Henning
 This repository contains main code and data from the C2C3 feedback manuscript (Henning et al, unpublished)
-All Matlab code was written by Miriam Henning 
-Python Code was written by Deniz Yüzak 
+All Matlab code, except for the code analyzing behavior data, was written by Miriam Henning. The code for behavior data analysis was written by Madhura Ketkar.
+Python Code was written by Deniz Yüzak.
 
 
 ## Code 
@@ -37,3 +37,7 @@ Analyzes C2and C3 direction selectivity from responses to drifting stripes movin
 
 ## Python Code for STRF Analysis 
 To run this Code, raw pdata are required. Please contact mhenning@uni-mainz.de
+
+## behavior analysis code for fig 7, supp. fig 5
+The sections of the master scripts aiming to plot the raw traces additionally require raw data, which are not uploaded here. Please contact mhenning@uni-mainz.de.
+Processed data required to run the rest of the sections are available in the folder 'Data'.
